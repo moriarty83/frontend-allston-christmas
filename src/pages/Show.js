@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {Link} from "react-router-dom"
+import Map from "../Components/Map";
 
 function Show(props) {
     // grab the id param from match
@@ -87,6 +88,7 @@ function Show(props) {
             />
             <input type="submit" value="update item"/>
           </form>
+          <Map />
         </div>
       );
 };
