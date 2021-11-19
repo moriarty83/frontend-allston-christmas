@@ -53,7 +53,7 @@ function Main(props) {
             <Index items={items} createItems={createItems} />
           </Route>
           <Route
-            path="/items/:id"
+            path="/api/items/:id"
             render={(rp) => (
               <Show 
                 {...rp}

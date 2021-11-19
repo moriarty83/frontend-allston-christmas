@@ -43,7 +43,7 @@ function Index(props) {
     const loaded = () => {
         return props.items.map((item) => (
           <div key={item._id} className="item">
-            <Link to={`/items/${item._id}`}><h1>{item.name}</h1></Link>
+            <Link to={`/api/items/${item._id}`}><h1>{item.name}</h1></Link>
             {/* <img src={item.image} alt={item.name} /> */}
             <h3>{item.description}</h3>
             <h3>{item.address}</h3>
