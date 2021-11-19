@@ -1,4 +1,6 @@
+
 import Main from "./Components/Main"
+
 
 function App() {
   return ( 
@@ -6,6 +8,7 @@ function App() {
 
     </div>,
     <div className="App">
+
       <Main />
     </div>
   );
