@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
+import Header from "./Header";
+import Footer from "./Footer";
 import Index from "../pages/Index";
 import Show from "../pages/Show";
 
@@ -48,6 +50,7 @@ function Main(props) {
 
     return (
       <main>
+        <Header />
         <Switch>
           <Route exact path="/">
             <Index items={items} createItems={createItems} />
@@ -64,6 +67,7 @@ function Main(props) {
             )}
           />
         </Switch>
+        <Footer />
       </main>
     );
 };
