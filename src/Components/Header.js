@@ -1,12 +1,14 @@
 
-function Header (props) {
-    return(
-    <nav>
-        <div className="menu-container">
-            <img className="menu-icon" src="./hamburger_menu.png" alt="" />
-        </div>
+import { Link } from "react-router-dom";
+
+function Header(props) {
+  return (
+    <nav className="nav">
+      <Link to="/">
+        <div>Allston Christmas</div>
+      </Link>
     </nav>
-    )
+  );
 }
 
 export default Header;
