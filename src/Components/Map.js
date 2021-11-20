@@ -22,7 +22,15 @@ const onLoad = marker => {
   }
 
 function Map(props) {
-  const center = props.center;
+  const coords = props.coords;
+  const markers = coords.map((ele)=>(
+    <Marker
+    onLoad={onLoad}
+    position={ele}
+    />
+  )
+  )
+  const center = coords[0];
   return (
       <>
     <LoadScript
@@ -31,12 +39,9 @@ function Map(props) {
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={10}
+        zoom={12}
       >
-          <Marker
-          onLoad={onLoad}
-          position={center}
-          />
+          {markers}
         { /* Child components, such as markers, info windows, etc. */ }
         <></>
       </GoogleMap>
