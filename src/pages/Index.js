@@ -27,15 +27,15 @@ function Index(props) {
     props.createItems(newForm);
     setNewForm({
         name: "",
-        // image: "",
         description: "",
-        address: "",
-        latitude: "",
-        longitude: "",
         trashDay: "",
-        city: "",
-        state: "",
+        address: "",        
+        city: "", 
+        state: "", 
         zip: "",
+        // latitude: "",
+        // longitude: "",
+        // image: "",
     });
   };
 
@@ -43,16 +43,17 @@ function Index(props) {
     const loaded = () => {
         return props.items.map((item) => (
           <div key={item._id} className="item">
-            <Link to={`/api/items/${item._id}`}><h1>{item.name}</h1></Link>
-            {/* <img src={item.image} alt={item.name} /> */}
+            <Link to={`/items/${item._id}`}><h1>{item.name}</h1></Link>
             <h3>{item.description}</h3>
             <h3>{item.address}</h3>
-            <h3>{item.latitude}</h3>
-            <h3>{item.longitude}</h3>
             <h3>{item.trashDay}</h3>
             <h3>{item.city}</h3>
             <h3>{item.state}</h3>
             <h3>{item.zip}</h3>
+            {/* <h3>{item.latitude}</h3>
+            <h3>{item.longitude}</h3> */}
+            {/* <img src={item.image} alt={item.name} /> */}
+            
           </div>
         ));
     };
