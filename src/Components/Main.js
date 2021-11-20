@@ -9,6 +9,8 @@ import Show from "../pages/Show";
 function Main(props) {
     const [items, setItems] = useState(null);
 
+    const [menuOn, setMenuOn] = useState(true)
+
     // AUTH0 ITEMS
     const { user, isAuthenticated } = useAuth0();
     const userAuthenticated =  isAuthenticated ? true : false;
@@ -67,7 +69,7 @@ function Main(props) {
 
     return (
       <main>
-        <Header />
+        <Header menuOn={menuOn} setMenuOn={setMenuOn} userAuthenticated={userAuthenticated}/>
         <Switch>
           <Route exact path="/">
             <Index items={items} createItems={createItems} userAuthenticated={userAuthenticated}/>
