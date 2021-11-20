@@ -32,10 +32,10 @@ function Show(props) {
         props.history.push("/")
     };
 
-    const coords = {
+    const coords = [{
       lat: item.latitude,
-      lng: item.longitude
-    };
+      lng: item.longitude}]
+    ;
 
     return (
         <div className="item">
@@ -100,7 +100,7 @@ function Show(props) {
             />
             <input type="submit" value="update item"/>
           </form>
-          <Map center={coords} />
+          <Map coords={coords} />
         </div>
       );
 };

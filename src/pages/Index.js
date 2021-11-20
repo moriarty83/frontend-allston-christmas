@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import {Link} from "react-router-dom"
+import Map from "../Components/Map";
 
 function Index(props) {
     // state to hold formData
@@ -16,7 +17,10 @@ function Index(props) {
         state: "",
         zip: "",
     });
-  
+    
+    // state to hold Coordinates Array
+    const coords = [];
+
     // handleChange function for form
     const handleChange = (event) => {
       setNewForm({ ...newForm, [event.target.name]: event.target.value });
@@ -42,7 +46,14 @@ function Index(props) {
 
     // loaded function
     const loaded = () => {
-        return props.items.map((item) => (
+      
+        
+        const items = props.items.map((item) => {  
+          coords.push({
+            lat: item.latitude,
+            lng: item.longitude})        
+        return(
+          
           <div key={item._id} className="item">
             <Link to={`/items/${item._id}`}><h1>{item.name}</h1></Link>
             <h3>{item.description}</h3>
@@ -56,9 +67,12 @@ function Index(props) {
             {/* <img src={item.image} alt={item.name} /> */}
             
           </div>
-        ));
-    };
+        )}
+        );
 
+        return (items)
+    };
+    
     const loading = () => {
         return <h1> Loading... </h1>
     };
@@ -119,6 +133,7 @@ function Index(props) {
             <input type="submit" value="List Item" />
           </form> : <p>Login to list an item</p>}
           {props.items ? loaded() : loading()}
+          <Map coords={coords} />
         </section>
     );
 }
