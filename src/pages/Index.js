@@ -65,6 +65,7 @@ function Index(props) {
     
     return (
         <section>
+          {props.userAuthenticated ? 
           <form onSubmit={handleSubmit}>
             <input required
               type="text"
@@ -116,7 +117,7 @@ function Index(props) {
               onChange={handleChange}
             />
             <input type="submit" value="List Item" />
-          </form>
+          </form> : <p>Login to list an item</p>}
           {props.items ? loaded() : loading()}
         </section>
     );
