@@ -23,7 +23,7 @@ function Index(props) {
     };
 
       // handle submit function for form
-  const handleSubmit = (event) => {
+    const handleSubmit = (event) => {
     event.preventDefault();
     props.createItems(newForm);
     setNewForm({
@@ -81,7 +81,7 @@ function Index(props) {
               onChange={handleChange}
             />
             <input required
-              type="text"
+              type="date"
               value={newForm.trashDay}
               name="trashDay"
               placeholder="trashDay"
