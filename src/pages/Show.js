@@ -64,7 +64,7 @@ function Show(props) {
               onChange={handleChange}
             />
             <input required
-              type="text"
+              type="date"
               value={editForm.trashDay}
               name="trashDay"
               placeholder="trashDay"
