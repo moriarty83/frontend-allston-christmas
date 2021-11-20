@@ -49,42 +49,49 @@ function Show(props) {
             DELETE
           </button>
           <form onSubmit={handleSubmit}>
-          <input
+          <input required
               type="text"
               value={editForm.name}
               name="name"
               placeholder="name"
               onChange={handleChange}
             />
-            <input
+            <input required
               type="text"
               value={editForm.description}
               name="description"
               placeholder="item description"
               onChange={handleChange}
             />
-            <input
+            <input required
               type="text"
               value={editForm.trashDay}
               name="trashDay"
               placeholder="trashDay"
               onChange={handleChange}
             />
-            <input
+            <input required
+              type="text"
+              value={editForm.address}
+              name="address"
+              placeholder="address"
+              onChange={handleChange}
+            />
+            <input required
               type="text"
               value={editForm.city}
               name="city"
               placeholder="city"
               onChange={handleChange}
             />
-            <input
+            <input required
               type="text"
               value={editForm.state}
               name="state"
               placeholder="state"
               onChange={handleChange}
             />
-            <input
+            <input required
               type="text"
               value={editForm.zip}
               name="zip"

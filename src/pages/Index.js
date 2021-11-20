@@ -66,42 +66,49 @@ function Index(props) {
     return (
         <section>
           <form onSubmit={handleSubmit}>
-            <input
+            <input required
               type="text"
               value={newForm.name}
               name="name"
               placeholder="name"
               onChange={handleChange}
             />
-            <input
+            <input required
               type="text"
               value={newForm.description}
               name="description"
               placeholder="item description"
               onChange={handleChange}
             />
-            <input
+            <input required
               type="text"
               value={newForm.trashDay}
               name="trashDay"
               placeholder="trashDay"
               onChange={handleChange}
             />
-            <input
+            <input required
+              type="text"
+              value={newForm.address}
+              name="address"
+              placeholder="address"
+              onChange={handleChange}
+            />
+            <input required
               type="text"
               value={newForm.city}
               name="city"
               placeholder="city"
               onChange={handleChange}
             />
-            <input
+            <input required
               type="text"
               value={newForm.state}
               name="state"
               placeholder="state"
               onChange={handleChange}
             />
-            <input
+            <input required
               type="text"
               value={newForm.zip}
               name="zip"
