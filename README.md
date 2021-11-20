@@ -1,8 +1,12 @@
 # Allston Christmas
 
-## Tools
-- language: HTML, CSS, JavaScript, SCSS
-- tools :Github Desktop, React
+## Technologies
+- HTML
+- CSS
+- JavaScript
+- SCSS
+- Github 
+- React
 
 ## Preparations
 - Install NPM at the project folder. `npm install`
@@ -17,3 +21,7 @@
 ## Reference
 - [W3Schools](https://www.w3schools.com/)
 - [stackoverflow](https://stackoverflow.com/)
+
+
+## App Link
+- 

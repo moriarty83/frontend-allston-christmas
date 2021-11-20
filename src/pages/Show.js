@@ -48,8 +48,8 @@ function Show(props) {
           <button onClick={removeItem} id="delete">
             DELETE
           </button>
-          <input type="submit" value="UPDATE"/>
           <form onSubmit={handleSubmit}>
+          <input type="submit" value="UPDATE"/>
           <input required
               type="text"
               value={editForm.name}
@@ -106,6 +106,7 @@ function Show(props) {
             placeholder="img url"
             onChange={handleChange}
             />
+            
           </form>
           <img src={item.image} alt={item.name} />
           <Map center={coords} />

@@ -6,7 +6,7 @@ function Index(props) {
     // state to hold formData
     const [newForm, setNewForm] = useState({
         name: "",
-        // image: "",
+        image: "",
         description: "",
         address: "",
         latitude: "",
@@ -65,8 +65,9 @@ function Index(props) {
     
     return (
         <section>
-          <input type="submit" value="List Item" />
+          
           <form onSubmit={handleSubmit}>
+            <input type="submit" value="List Item" />
             <input required
               type="text"
               value={newForm.name}
