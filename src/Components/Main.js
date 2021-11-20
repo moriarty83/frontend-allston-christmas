@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
-import Index from "../Pages/Index";
-import Show from "../Pages/Show";
+import Index from "../pages/Index";
+import Show from "../pages/Show";
 
 function Main(props) {
     const [items, setItems] = useState(null);
@@ -56,7 +56,7 @@ function Main(props) {
             <Index items={items} createItems={createItems} />
           </Route>
           <Route
-            path="/api/items/:id"
+            path="/items/:id"
             render={(rp) => (
               <Show 
                 {...rp}
