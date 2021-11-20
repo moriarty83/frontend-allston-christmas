@@ -17,13 +17,18 @@ function Main(props) {
     };
 
     const createItems = async (item) => {
+        console.log(typeof(item.zip))
         await fetch(URL, {
             method:"post",
             headers: {
                 "Content-Type": "application/json",
             },
+            
             body: JSON.stringify(item),
+            
+            
         });
+        
         getItems();
     };
 

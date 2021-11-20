@@ -47,7 +47,7 @@ function Index(props) {
             <Link to={`/items/${item._id}`}><h1>{item.name}</h1></Link>
             <h3>{item.description}</h3>
             <h3>{item.address}</h3>
-            <h3>{item.trashDay}</h3>
+            <h3>{(item.trashDay).slice(0, 10)}</h3>
             <h3>{item.city}</h3>
             <h3>{item.state}</h3>
             <h3>{item.zip}</h3>
