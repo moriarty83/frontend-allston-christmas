@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
+import { useAuth0 } from '@auth0/auth0-react';
 import Header from "./Header";
 import Footer from "./Footer";
 import Index from "../pages/Index";
@@ -53,12 +54,18 @@ function Main(props) {
     
     useEffect(() => getItems(), []);
 
+    const { isAuthenticated } = useAuth0();
+    const userAuthenticated =  isAuthenticated ? true : false;
+
+
+    console.log(userAuthenticated)
+
     return (
       <main>
         <Header />
         <Switch>
           <Route exact path="/">
-            <Index items={items} createItems={createItems} />
+            <Index items={items} createItems={createItems} userAuthenticated={userAuthenticated}/>
           </Route>
           <Route
             path="/items/:id"
@@ -68,6 +75,7 @@ function Main(props) {
                 items={items}
                 updateItems={updateItems}
                 deleteItems={deleteItems}
+                userAuthenticated={userAuthenticated}
               />
             )}
           />
