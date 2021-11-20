@@ -48,6 +48,7 @@ function Show(props) {
           <button onClick={removeItem} id="delete">
             DELETE
           </button>
+          <input type="submit" value="UPDATE"/>
           <form onSubmit={handleSubmit}>
           <input required
               type="text"
@@ -98,7 +99,6 @@ function Show(props) {
               placeholder="zip"
               onChange={handleChange}
             />
-            <input type="submit" value="update item"/>
           </form>
           <Map center={coords} />
         </div>

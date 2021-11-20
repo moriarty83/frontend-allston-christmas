@@ -65,6 +65,7 @@ function Index(props) {
     
     return (
         <section>
+          <input type="submit" value="List Item" />
           <form onSubmit={handleSubmit}>
             <input required
               type="text"
@@ -115,7 +116,6 @@ function Index(props) {
               placeholder="zip"
               onChange={handleChange}
             />
-            <input type="submit" value="List Item" />
           </form>
           {props.items ? loaded() : loading()}
         </section>
