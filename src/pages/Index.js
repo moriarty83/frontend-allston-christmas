@@ -36,7 +36,7 @@ function Index(props) {
         zip: "",
         // latitude: "",
         // longitude: "",
-        // image: "",
+        image: "",
     });
   };
 
@@ -53,7 +53,7 @@ function Index(props) {
             <h3>{item.zip}</h3>
             {/* <h3>{item.latitude}</h3>
             <h3>{item.longitude}</h3> */}
-            {/* <img src={item.image} alt={item.name} /> */}
+            <img src={item.image} alt={item.name} />
             
           </div>
         ));
@@ -115,6 +115,13 @@ function Index(props) {
               name="zip"
               placeholder="zip"
               onChange={handleChange}
+            />
+            <input
+            type="text"
+            value={newForm.img}
+            name="img url"
+            placeholder="img url"
+            onChange={handleChange}
             />
           </form>
           {props.items ? loaded() : loading()}

@@ -99,8 +99,17 @@ function Show(props) {
               placeholder="zip"
               onChange={handleChange}
             />
+            <input
+            type="text"
+            value={editForm.img}
+            name="img url"
+            placeholder="img url"
+            onChange={handleChange}
+            />
           </form>
+          <img src={item.image} alt={item.name} />
           <Map center={coords} />
+          
         </div>
       );
 };

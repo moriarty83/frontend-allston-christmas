@@ -1,4 +1,5 @@
 # Allston Christmas
+
 ## Tools
 - language: HTML, CSS, JavaScript, SCSS
 - tools :Github Desktop, React
@@ -8,7 +9,8 @@
 - Link and Route component need react-router-dom. 
 
 ## Function
-- At main page, there are list of items from other people.
+- At main page, users can see a list of available items.
+- Will be able to add item descriptions and item location.
 - All item locations are listed by location.
 
 
