@@ -7,7 +7,7 @@ function Index(props) {
     // state to hold formData
     const [newForm, setNewForm] = useState({
         name: "",
-        // image: "",
+        image: "",
         description: "",
         address: "",
         latitude: "",
@@ -40,7 +40,7 @@ function Index(props) {
         zip: "",
         // latitude: "",
         // longitude: "",
-        // image: "",
+        image: "",
     });
   };
 
@@ -64,7 +64,7 @@ function Index(props) {
             <h3>{item.zip}</h3>
             {/* <h3>{item.latitude}</h3>
             <h3>{item.longitude}</h3> */}
-            {/* <img src={item.image} alt={item.name} /> */}
+            <img src={item.image} alt={item.name} />
             
           </div>
         )}
@@ -79,8 +79,11 @@ function Index(props) {
     
     return (
         <section>
+
           {props.userAuthenticated ? 
+
           <form onSubmit={handleSubmit}>
+            <input type="submit" value="List Item" />
             <input required
               type="text"
               value={newForm.name}
@@ -130,8 +133,18 @@ function Index(props) {
               placeholder="zip"
               onChange={handleChange}
             />
+
+            <input
+            type="text"
+            value={newForm.img}
+            name="img url"
+            placeholder="img url"
+            onChange={handleChange}
+            />
+
             <input type="submit" value="List Item" />
           </form> : <p>Login to list an item</p>}
+
           {props.items ? loaded() : loading()}
           <Map coords={coords} />
         </section>
