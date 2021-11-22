@@ -56,15 +56,15 @@ function Index(props) {
           
           <div key={item._id} className="item">
             <Link to={`/items/${item._id}`}><h1>{item.name}</h1></Link>
-            <h3>{item.description}</h3>
-            <h3>{item.address}</h3>
-            <h3>{(item.trashDay).slice(0,10)}</h3>
-            <h3>{item.city}</h3>
-            <h3>{item.state}</h3>
-            <h3>{item.zip}</h3>
+            {/* <h3>{item.description}</h3> */}
+            {/* <h3>{item.address}</h3> */}
+            {/* <h3>{(item.trashDay).slice(0,10)}</h3> */}
+            <h3>{item.city}, {item.state}</h3>
+
+            {/* <h3>{item.zip}</h3> */}
             {/* <h3>{item.latitude}</h3>
             <h3>{item.longitude}</h3> */}
-            <img src={item.image} alt={item.name} />
+            <img src={item.image_url} alt={item.name} />
             
           </div>
         )}
@@ -137,16 +137,22 @@ function Index(props) {
             <input
             type="text"
             value={newForm.img}
-            name="img url"
-            placeholder="img url"
+            name="image_url"
+            placeholder="Image URL"
             onChange={handleChange}
             />
 
             <input type="submit" value="List Item" />
           </form> : <p>Login to list an item</p>}
+          <div className="index-div">
+          <div className="map-div">
+              <Map coords={coords} />
+            </div>
+            <div className="items-div">
+            {props.items ? loaded() : loading()}
+            </div>
 
-          {props.items ? loaded() : loading()}
-          <Map coords={coords} />
+          </div>
         </section>
     );
 }

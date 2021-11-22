@@ -37,6 +37,8 @@ function Show(props) {
       lng: item.longitude}]
     ;
 
+    console.log(coords)
+
     return (
         <div className="item">
           <h1>{item.name}</h1>
@@ -48,6 +50,7 @@ function Show(props) {
           <button onClick={removeItem} id="delete">
             DELETE
           </button>
+          {props.userAuthenticated ? 
           <form onSubmit={handleSubmit}>
           <input type="submit" value="UPDATE"/>
           <input required
@@ -101,16 +104,16 @@ function Show(props) {
             />
             <input
             type="text"
-            value={editForm.img}
-            name="img url"
-            placeholder="img url"
+            value={editForm.image_url}
+            name="image_url"
+            placeholder="Image URL"
             onChange={handleChange}
             />
             
-          </form>
+          </form> : '' }
 
-          <img src={item.image} alt={item.name} />
-          <Map center={coords} />
+          <img className="show-image" src={item.image_url} alt={item.name} />
+          <Map coords={coords} />
           
         </div>
       );
