@@ -14,13 +14,12 @@ const handleMenu = ()=>{
   return (
     <nav className="nav">
       <div className="nav-circle" >
-        <img src="./hamburger_menu.png" alt="menu" className="menu-img" />
-        <div className={"dropdown "}>
+        <img src="./hamburger_menu.png" alt="menu" className="menu-img" onClick={handleMenu} />
+        <div className={props.menuOn ? "dropdown " : "dropdown hidden"}>
           <Button primary>Home</Button>
           <AuthButton />
         </div>
       </div>
-      <AuthButton />
       <Link to="/">
         <div>Allston Christmas</div>
       </Link>
