@@ -1,15 +1,27 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Route, Switch } from "react-router-dom";
 import { user, useAuth0 } from '@auth0/auth0-react';
 import Header from "./Header";
 import Footer from "./Footer";
 import Index from "../pages/Index";
 import Show from "../pages/Show";
+import Profile from "../pages/Profile";
 
 function Main(props) {
+    // Ref is used to close the menu.
+    const ref = useRef()
+
     const [items, setItems] = useState(null);
 
     const [menuOn, setMenuOn] = useState(false)
+
+    // Code thanks to: https://www.codingdeft.com/posts/react-on-click-outside/
+    const menuOff = (event) =>{
+      if (menuOn && ref.current && !ref.current.contains(event.target)) {
+        setMenuOn(false)
+      }
+    }
+    
 
     // AUTH0 ITEMS
     const { user, isAuthenticated } = useAuth0();
@@ -62,13 +74,8 @@ function Main(props) {
     
     useEffect(() => getItems(), []);
 
-
-
-
-    console.log(userAuthenticated)
-
     return (
-      <main>
+      <main ref={ref} onClick={menuOff}>
         <Header menuOn={menuOn} setMenuOn={setMenuOn} userAuthenticated={userAuthenticated}/>
         <Switch>
           <Route exact path="/">
@@ -85,6 +92,16 @@ function Main(props) {
                 userAuthenticated={userAuthenticated}
               />
             )}
+          />
+          <Route
+            path="/profile"
+            render={(rp) => (
+              <Profile 
+                {...rp}
+                items={items}
+                userAuthenticated={userAuthenticated}
+                />
+              )}
           />
         </Switch>
         <Footer />

@@ -10,13 +10,16 @@ const handleMenu = ()=>{
   props.setMenuOn(!props.menuOn)
 }
 
+const userLinks = props.userAuthenticated ? <><a href="/" className="nav-link">List Item</a> <a href="/profile" className="nav-link">Profile</a></> : ''
+
 
   return (
     <nav className="nav">
       <div className="nav-circle" >
         <img src="./hamburger_menu.png" alt="menu" className="menu-img" onClick={handleMenu} />
         <div className={props.menuOn ? "dropdown " : "dropdown hidden"}>
-          <Button primary>Home</Button>
+          <a href="/" className="nav-link">Home</a>
+          {userLinks}
           <AuthButton />
         </div>
       </div>

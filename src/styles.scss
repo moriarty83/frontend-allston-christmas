@@ -6,6 +6,11 @@
   --highlight: #88bdbc;
 }
 
+@mixin primary-bg-white-text {
+  background-color: var(--primary);
+  color: white;
+}
+
 @mixin bright-body {
   background-color: var(--secondary-variant);
   border: 3px solid var(--primary);
@@ -19,12 +24,14 @@
 }
 
 body {
+  background-color: var(--secondary);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "Bangers", cursive;
 }
 
 nav {
@@ -54,9 +61,13 @@ nav {
   }
 
   .dropdown {
+    @include flex-column();
     background-color: white;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     border: 2px solid var(--secondary-variant);
-    width: 8em;
+    width: 10em;
     position: absolute;
     top: 6em;
     left: 1em;
@@ -70,10 +81,22 @@ nav {
   }
 
   .nav-link {
+    text-align: center;
+    text-decoration: none;
+    height: 2em;
+
+    margin: 0;
     visibility: inherit;
     width: 100%;
-    background-color: white;
-    border-bottom: 2px solid gray;
+    @include primary-bg-white-text();
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 2px solid var(--secondary);
+    &:hover {
+      background-color: var(--highlight);
+    }
   }
 }
 
@@ -82,17 +105,20 @@ nav {
 
   .items-div {
     display: flex;
+    justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
 
     .item {
-      @include bright-body();
+      @include primary-bg-white-text();
       @include flex-column();
-
+      border-radius: 1em;
+      border: 3px solid var(--secondary-variant);
       margin: 2em;
       padding: 2em;
       width: 20%;
       min-width: 10rem;
+      box-shadow: 3px 3px 10px var(--primary-variant);
 
       img {
         height: 10em;
@@ -100,6 +126,10 @@ nav {
         border-radius: 50%;
         object-fit: cover;
         box-shadow: 3px 3px 5px var(--primary);
+      }
+
+      a {
+        color: white;
       }
     }
   }
