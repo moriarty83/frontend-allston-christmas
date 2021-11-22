@@ -9,7 +9,7 @@ import Show from "../pages/Show";
 function Main(props) {
     const [items, setItems] = useState(null);
 
-    const [menuOn, setMenuOn] = useState(true)
+    const [menuOn, setMenuOn] = useState(false)
 
     // AUTH0 ITEMS
     const { user, isAuthenticated } = useAuth0();

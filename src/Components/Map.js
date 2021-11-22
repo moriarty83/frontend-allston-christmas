@@ -11,8 +11,8 @@ const addresses = [
 
 
 const containerStyle = {
-  width: '400px',
-  height: '400px'
+  width: window.innerWidth*.6,
+  height: window.innerWidth*.6
 };
 
 
@@ -22,6 +22,7 @@ const onLoad = marker => {
   }
 
 function Map(props) {
+  console.log("props: ", props)
   const coords = props.coords;
   const markers = coords.map((ele)=>(
     <Marker
