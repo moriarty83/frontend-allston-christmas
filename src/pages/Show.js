@@ -32,10 +32,10 @@ function Show(props) {
         props.history.push("/")
     };
 
-    const coords = {
+    const coords = [{
       lat: item.latitude,
-      lng: item.longitude
-    };
+      lng: item.longitude}]
+    ;
 
     return (
         <div className="item">
@@ -108,6 +108,7 @@ function Show(props) {
             />
             
           </form>
+
           <img src={item.image} alt={item.name} />
           <Map center={coords} />
           
