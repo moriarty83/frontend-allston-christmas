@@ -146,7 +146,7 @@ function Index(props) {
           </form> : <p>Login to list an item</p>}
           <div className="index-div">
           <div className="map-div">
-              <Map coords={coords} />
+              <Map coords={coords} width={window.innerWidth*.6} height={window.innerWidth*.6}/>
             </div>
             <div className="items-div">
             {props.items ? loaded() : loading()}
