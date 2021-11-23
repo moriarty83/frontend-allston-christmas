@@ -130,6 +130,7 @@ function Show(props) {
               name="image_url"
               placeholder="Image URL"
               onChange={handleChange}
+
               />
               <input type="submit" value="UPDATE"/>
               <button onClick={toggleEdit} id="cancel">
