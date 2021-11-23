@@ -110,7 +110,7 @@ function Show(props) {
             onChange={handleChange}
             />
             
-            <input type="checkbox" id="" name="Available" value="Available" />Available
+            <input type="checkbox" id="" name="Available" value="Available" />Reserved
 
           </form> : '' }
 
