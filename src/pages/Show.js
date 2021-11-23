@@ -105,7 +105,7 @@ function Show(props) {
                 name="city"
                 placeholder="city"
                 onChange={handleChange}
-                id="update-city"
+                className="form-city"
               />
               <input required
                 type="text"
@@ -113,7 +113,7 @@ function Show(props) {
                 name="state"
                 placeholder="state"
                 onChange={handleChange}
-                id="update-state"
+                className="form-state"
               />
               <input required
                 type="text"
@@ -121,7 +121,7 @@ function Show(props) {
                 name="zip"
                 placeholder="zip"
                 onChange={handleChange}
-                id="update-zip"
+                className="form-zip"
               />
               </div>
               <input
