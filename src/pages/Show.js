@@ -110,6 +110,8 @@ function Show(props) {
             onChange={handleChange}
             />
             
+            <input type="checkbox" id="" name="Available" value="Available" />Available
+
           </form> : '' }
 
           <img className="show-image" src={item.image_url} alt={item.name} />
