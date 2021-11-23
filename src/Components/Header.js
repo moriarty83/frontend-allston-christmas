@@ -24,7 +24,7 @@ const userLinks = props.userAuthenticated ? <><a href="/create" className="nav-l
         </div>
       </div>
       <Link className="nav-title" to="/">
-        Allston Christmas
+        Allston  <img className="logo" src="/tree.png"/> Christmas 
       </Link>
 
     </nav>
