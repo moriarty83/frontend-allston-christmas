@@ -3,18 +3,6 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 
 
-const addresses = [
-    "Reading, MA",
-    "6 South St., Jamaica Plain, MA 02130",
-    "02494"
-]
-
-
-const containerStyle = {
-  width: window.innerWidth*.6,
-  height: window.innerWidth*.6
-};
-
 
 
 const onLoad = marker => {
@@ -22,7 +10,12 @@ const onLoad = marker => {
   }
 
 function Map(props) {
-  console.log("props: ", props)
+
+  const containerStyle = {
+    width: props.width,
+    height: props.height,
+  };
+
   const coords = props.coords;
   const markers = coords.map((ele)=>(
     <Marker
