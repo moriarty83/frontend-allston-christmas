@@ -59,13 +59,39 @@ body {
   font-family: "Bangers", cursive;
 }
 
+input[type="submit"] {
+  @include button-primary();
+}
+
+.title {
+  font-size: 3em;
+}
+
 nav {
   width: 100%;
   height: 5em;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   background-color: var(--primary);
+
+  .nav-title {
+    padding: 0;
+    font-size: 3em;
+    margin: 0;
+    color: var(--primary-variant);
+    text-shadow: 0px 0px 15px var(--secondary);
+    text-decoration: none;
+  }
+
+  .logo {
+    width: 0.75em;
+    position: relative;
+    z-index: 2;
+    -webkit-filter: drop-shadow(5px 5px 20px (--secondary));
+    filter: drop-shadow(5px 5px 20px (--secondary));
+  }
 
   .nav-circle {
     position: absolute;
@@ -212,10 +238,6 @@ nav {
       margin: 2em;
     }
 
-    input[type="submit"] {
-      @include button-primary();
-    }
-
     #cancel {
       @include button-primary();
     }
@@ -246,7 +268,7 @@ nav {
   }
 }
 
-.update-form {
+form {
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -255,14 +277,25 @@ nav {
     font-size: 1.5em;
     font-family: "Bangers", cursive;
   }
-  #update-state {
+  .form-state {
     width: 2em;
   }
-  #update-zip {
+  .form-zip {
     width: 3em;
   }
-  #update-city {
+  .form-city {
     width: 5em;
+  }
+}
+
+.create-div {
+  margin: 3em auto 3em auto;
+
+  @media (max-width: 500px) {
+    width: 90%;
+  }
+  @media (min-width: 501px) {
+    width: 50%;
   }
 }
 

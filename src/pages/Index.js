@@ -79,74 +79,9 @@ function Index(props) {
     
     return (
         <section>
-
-          {props.userAuthenticated ? 
-
-          <form onSubmit={handleSubmit}>
-            <input type="submit" value="List Item" />
-            <input required
-              type="text"
-              value={newForm.name}
-              name="name"
-              placeholder="name"
-              onChange={handleChange}
-            />
-            <input required
-              type="text"
-              value={newForm.description}
-              name="description"
-              placeholder="item description"
-              onChange={handleChange}
-            />
-            <input required
-              type="date"
-              value={newForm.trashDay}
-              name="trashDay"
-              placeholder="trashDay"
-              onChange={handleChange}
-            />
-            <input required
-              type="text"
-              value={newForm.address}
-              name="address"
-              placeholder="address"
-              onChange={handleChange}
-            />
-            <input required
-              type="text"
-              value={newForm.city}
-              name="city"
-              placeholder="city"
-              onChange={handleChange}
-            />
-            <input required
-              type="text"
-              value={newForm.state}
-              name="state"
-              placeholder="state"
-              onChange={handleChange}
-            />
-            <input required
-              type="text"
-              value={newForm.zip}
-              name="zip"
-              placeholder="zip"
-              onChange={handleChange}
-            />
-
-            <input
-            type="text"
-            value={newForm.img}
-            name="image_url"
-            placeholder="Image URL"
-            onChange={handleChange}
-            />
-
-            <input type="submit" value="List Item" />
-          </form> : <p>Login to list an item</p>}
           <div className="index-div">
           <div className="map-div">
-              <Map coords={coords} width={window.innerWidth*.6} height={window.innerWidth*.6}/>
+              <Map coords={coords} width={window.innerWidth*.3} height={window.innerWidth*.3}/>
             </div>
             <div className="items-div">
             {props.items ? loaded() : loading()}

@@ -10,7 +10,7 @@ const handleMenu = ()=>{
   props.setMenuOn(!props.menuOn)
 }
 
-const userLinks = props.userAuthenticated ? <><a href="/" className="nav-link">List Item</a> <a href="/profile" className="nav-link">Profile</a></> : ''
+const userLinks = props.userAuthenticated ? <><a href="/create" className="nav-link">List Item</a> <a href="/profile" className="nav-link">Profile</a></> : ''
 
 
   return (
@@ -23,8 +23,8 @@ const userLinks = props.userAuthenticated ? <><a href="/" className="nav-link">L
           <AuthButton />
         </div>
       </div>
-      <Link to="/">
-        <div>Allston Christmas</div>
+      <Link className="nav-title" to="/">
+        Allston  <img className="logo" src="/tree.png"/> Christmas 
       </Link>
 
     </nav>

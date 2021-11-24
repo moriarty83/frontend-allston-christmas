@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import Index from "../pages/Index";
 import Show from "../pages/Show";
 import Profile from "../pages/Profile";
+import Create from "../pages/Create";
 
 function Main(props) {
     // Ref is used to close the menu.
@@ -17,9 +18,6 @@ function Main(props) {
 
     // Code thanks to: https://www.codingdeft.com/posts/react-on-click-outside/
     const menuOff = (event) =>{
-      if (menuOn && ref.current && !ref.current.contains(event.target)) {
-        setMenuOn(false)
-      }
     }
     
 
@@ -99,6 +97,16 @@ function Main(props) {
               <Profile 
                 {...rp}
                 items={items}
+                userAuthenticated={userAuthenticated}
+                />
+              )}
+          />
+                    <Route
+            path="/create"
+            render={(rp) => (
+              <Create 
+                {...rp}
+                createItems={createItems}
                 userAuthenticated={userAuthenticated}
                 />
               )}
