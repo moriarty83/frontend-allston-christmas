@@ -81,7 +81,7 @@ function Index(props) {
         <section>
           <div className="index-div">
           <div className="map-div">
-              <Map coords={coords} width={window.innerWidth*.6} height={window.innerWidth*.6}/>
+              <Map coords={coords} width={window.innerWidth*.3} height={window.innerWidth*.3}/>
             </div>
             <div className="items-div">
             {props.items ? loaded() : loading()}
