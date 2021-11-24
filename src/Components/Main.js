@@ -88,6 +88,7 @@ function Main(props) {
                 updateItems={updateItems}
                 deleteItems={deleteItems}
                 userAuthenticated={userAuthenticated}
+                user = {user}
               />
             )}
           />
@@ -98,6 +99,7 @@ function Main(props) {
                 {...rp}
                 items={items}
                 userAuthenticated={userAuthenticated}
+                
                 />
               )}
           />

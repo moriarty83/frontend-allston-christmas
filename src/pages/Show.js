@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import {Link} from "react-router-dom"
 import Map from "../Components/Map";
+import moment from "moment";
 
 function Show(props) {
     // grab the id param from match
@@ -85,7 +86,7 @@ function Show(props) {
               />
               <input required
                 type="date"
-                value={editForm.trashDay}
+                value={(item.trashDay).slice(0,10)}
                 name="trashDay"
                 placeholder="trashDay"
                 onChange={handleChange}
@@ -105,7 +106,7 @@ function Show(props) {
                 name="city"
                 placeholder="city"
                 onChange={handleChange}
-                className="form-city"
+                id="update-city"
               />
               <input required
                 type="text"
@@ -113,7 +114,7 @@ function Show(props) {
                 name="state"
                 placeholder="state"
                 onChange={handleChange}
-                className="form-state"
+                id="update-state"
               />
               <input required
                 type="text"
@@ -121,7 +122,7 @@ function Show(props) {
                 name="zip"
                 placeholder="zip"
                 onChange={handleChange}
-                className="form-zip"
+                id="update-zip"
               />
               </div>
               <input
