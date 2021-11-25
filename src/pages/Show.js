@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import {Link} from "react-router-dom"
 import Map from "../Components/Map";
-import moment from "moment";
+
 
 function Show(props) {
     // grab the id param from match
@@ -21,6 +21,11 @@ function Show(props) {
 
     // handleChange function for form
     const handleChange = (event) => {
+      if (event.target.name == 'reserved') {
+        event.target.value = event.target.checked
+        console.log(event.target.value)
+      }
+      
     setEditForm({ ...editForm, [event.target.name]: event.target.value });
     };
 
@@ -30,6 +35,7 @@ function Show(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault()
+        console.log(event)
         props.updateItems(editForm, item._id)
         // redirect Items back to index
         props.history.push("/")
@@ -45,7 +51,9 @@ function Show(props) {
       lng: item.longitude}]
     ;
 
+
     useEffect(() => {
+      
       window.scrollTo(0, 0)
     }, [])
 
@@ -65,7 +73,24 @@ function Show(props) {
               <p>Trash Date: {(item.trashDay).slice(0,10)}</p>
 
               
-              {props.userAuthenticated ? <button onClick={toggleEdit}>Edit Item</button> : ''}
+              {props.userAuthenticated && props.user.email === item.user_email ? <button onClick={toggleEdit}>Edit Item</button> : props.userAuthenticated && item.reserved === false ? 
+              <>
+                <form className="update-form" onSubmit={handleSubmit}>
+                <label for="reserved">Reserve?</label>
+                <input required
+                  type="checkbox"
+                  name="reserved"
+                  onChange={handleChange}
+                />
+                <input 
+                  type="hidden"
+                  name="reservedBy"
+                  value={props.user.email}
+                />
+                <input type="submit" value="UPDATE"/> 
+                </form>
+              </>: 
+              item.reserved === true ? <p>Somebody has Reserved this Item</p> : ''}
               </div>
               <div className={editOn ? "item-actions" : "item-actions hidden"} >
             {props.userAuthenticated ? <>
