@@ -21,7 +21,7 @@ function Show(props) {
 
     // handleChange function for form
     const handleChange = (event) => {
-      if (event.target.name == 'reserved') {
+      if (event.target.name === 'reserved') {
         event.target.value = event.target.checked
         console.log(event.target.value)
       }

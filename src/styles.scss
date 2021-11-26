@@ -51,7 +51,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background: url(https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/brighton-ave-packards-corner-allston-ma-black-and-white-toby-mcguire.jpg) no-repeat center center fixed;
+  background: url(https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/brighton-ave-packards-corner-allston-ma-black-and-white-toby-mcguire.jpg)
+    no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -153,44 +154,43 @@ nav {
 
 .index-div {
   @include flex-column();
+}
+.items-div {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
 
-  .items-div {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    flex-wrap: wrap;
+  .item {
+    @include primary-bg-white-text();
+    @include flex-column();
+    border-radius: 1em;
+    border: 3px solid var(--secondary-variant);
+    margin: 2em;
+    padding: 2em;
+    width: 20%;
+    min-width: 10rem;
+    box-shadow: 3px 3px 10px var(--primary-variant);
 
-    .item {
-      @include primary-bg-white-text();
-      @include flex-column();
-      border-radius: 1em;
-      border: 3px solid var(--secondary-variant);
-      margin: 2em;
-      padding: 2em;
-      width: 20%;
-      min-width: 10rem;
-      box-shadow: 3px 3px 10px var(--primary-variant);
+    img {
+      height: 10em;
+      width: 10em;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 3px 3px 5px var(--primary);
+    }
 
-      img {
-        height: 10em;
-        width: 10em;
-        border-radius: 50%;
-        object-fit: cover;
-        box-shadow: 3px 3px 5px var(--primary);
-      }
-
-      a {
-        color: white;
-      }
+    a {
+      color: white;
     }
   }
+}
 
-  .map-div {
-    // right: 0;
-    // position: fixed;
-    margin: 2em;
-    grid-column: 2/2;
-  }
+.map-div {
+  // right: 0;
+  // position: fixed;
+  margin: 2em;
+  grid-column: 2/2;
 }
 
 .show-item {
