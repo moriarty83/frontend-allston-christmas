@@ -40,6 +40,7 @@ function Create(props) {
         // longitude: "",
         image: "",
     });
+    props.history.push("/")
   };
 
     
