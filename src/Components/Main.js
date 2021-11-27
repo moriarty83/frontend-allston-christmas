@@ -99,6 +99,7 @@ function Main(props) {
                 {...rp}
                 items={items}
                 userAuthenticated={userAuthenticated}
+                user = {user}
                 
                 />
               )}
