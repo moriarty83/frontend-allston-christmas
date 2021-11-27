@@ -12,7 +12,7 @@
 }
 
 @mixin bright-body {
-  background-color: var(--secondary-variant);
+  background-color: var(--secondary);
   border: 3px solid var(--primary);
   box-shadow: 3px 3px 5px var(--primary-variant);
 }
@@ -67,6 +67,10 @@ input[type="submit"] {
 .title {
   font-size: 3em;
 }
+
+//////////////////
+// NAVBAR
+//////////////////
 
 nav {
   width: 100%;
@@ -152,9 +156,14 @@ nav {
   }
 }
 
+//////////////////
+// INDEX
+//////////////////
+
 .index-div {
   @include flex-column();
 }
+
 .items-div {
   display: flex;
   justify-content: space-around;
@@ -297,6 +306,58 @@ form {
   @media (min-width: 501px) {
     width: 50%;
   }
+}
+
+//////////////////
+// PROFILE
+//////////////////
+
+.profile {
+  @include bright-body();
+  @include flex-column();
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  border-radius: 1em;
+  border: 5px solid var(--primary-variant);
+  margin: 2em;
+  padding: 2em;
+  width: 50%;
+  min-width: 10rem;
+  box-shadow: 3px 3px 10px var(--primary-variant);
+
+  img {
+    height: 10em;
+    width: 10em;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 3px 3px 5px var(--primary);
+  }
+
+  a {
+    color: white;
+  }
+}
+
+.title {
+  width: 40%;
+  margin: 2em auto auto auto;
+  border-radius: 0.25em;
+  border: 5px solid var(--primary-variant);
+  text-align: center;
+  @include bright-body();
+}
+
+//////////////////
+// FOOTER
+//////////////////
+footer {
+  color: white;
+  font-size: 1.3em;
+  text-align: center;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: var(--primary-variant);
 }
 
 code {
