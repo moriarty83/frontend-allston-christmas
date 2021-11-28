@@ -4,6 +4,12 @@ import {Link} from "react-router-dom"
 import Map from "../Components/Map";
 
 function Index(props) {
+    const defaultCenter = {
+      lat: 39.83333,
+      lng: -98.58333};
+
+    const defaultZoom = 4;
+
     // state to hold formData
     const [newForm, setNewForm] = useState({
         name: "",
@@ -81,7 +87,7 @@ function Index(props) {
         <section>
           <div className="index-div">
           <div className="map-div">
-              <Map coords={coords} width={window.innerWidth*.3} height={window.innerWidth*.3}/>
+              <Map coords={coords} width={window.innerWidth*.3} height={window.innerWidth*.3} center={defaultCenter} zoom={defaultZoom}/>
             </div>
             <div className="items-div">
             {props.items ? loaded() : loading()}

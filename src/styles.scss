@@ -202,6 +202,10 @@ nav {
   grid-column: 2/2;
 }
 
+//////////////////
+// SHOW
+//////////////////
+
 .show-item {
   @include flex-column();
   margin: 3em auto 5em auto;
@@ -306,6 +310,20 @@ form {
   @media (min-width: 501px) {
     width: 50%;
   }
+}
+
+//////////////////
+// ABOUT
+//////////////////
+.about {
+  font-family: "Oxygen";
+  font-size: 1.5em;
+  margin: 2em;
+  @include primary-bg-white-text();
+  border: 3px solid var(--secondary-variant);
+  padding: 1em;
+  border-radius: 0.5em;
+  box-shadow: 3px 3px 10px var(--primary-variant);
 }
 
 //////////////////

@@ -1,15 +1,12 @@
 import React from 'react'
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
-
-
-
-
 const onLoad = marker => {
     console.log('marker: ', marker)
   }
 
 function Map(props) {
+
 
   const containerStyle = {
     width: props.width,
@@ -24,7 +21,10 @@ function Map(props) {
     />
   )
   )
-  const center = coords[0];
+  const center = props.center ? props.center : coords[0];
+  console.log(center);
+  const zoom = props.zoom ? props.zoom : 12;
+
   return (
       <>
     <LoadScript
@@ -33,7 +33,7 @@ function Map(props) {
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={12}
+        zoom={zoom}
       >
           {markers}
         { /* Child components, such as markers, info windows, etc. */ }
