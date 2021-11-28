@@ -7,6 +7,7 @@ import Index from "../pages/Index";
 import Show from "../pages/Show";
 import Profile from "../pages/Profile";
 import Create from "../pages/Create";
+import About from "../pages/About";
 
 function Main(props) {
     // Ref is used to close the menu.
@@ -34,7 +35,6 @@ function Main(props) {
     };
 
     const createItems = async (item) => {
-        console.log(typeof(item.zip))
         item.user_email = user.email;
         await fetch(URL, {
              
@@ -104,7 +104,7 @@ function Main(props) {
                 />
               )}
           />
-                    <Route
+            <Route
             path="/create"
             render={(rp) => (
               <Create 
@@ -112,8 +112,21 @@ function Main(props) {
                 createItems={createItems}
                 userAuthenticated={userAuthenticated}
                 />
+                
               )}
+            />
+
+          <Route
+          path="/about"
+          render={(rp) => (
+            <About 
+              {...rp}
+              userAuthenticated={userAuthenticated}
+              />
+              
+            )}
           />
+            
         </Switch>
         <Footer />
       </main>

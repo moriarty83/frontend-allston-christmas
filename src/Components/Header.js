@@ -19,6 +19,7 @@ const userLinks = props.userAuthenticated ? <><a href="/create" className="nav-l
         <img src="./hamburger_menu.png" alt="menu" className="menu-img" onClick={handleMenu} />
         <div className={props.menuOn ? "dropdown " : "dropdown hidden"}>
           <a href="/" className="nav-link">Home</a>
+          <a href="/about" className="nav-link">About</a>
           {userLinks}
           <AuthButton />
         </div>
