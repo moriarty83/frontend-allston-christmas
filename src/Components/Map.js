@@ -1,28 +1,30 @@
 import React from 'react'
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
-
-
-const addresses = [
-    "Reading, MA",
-    "6 South St., Jamaica Plain, MA 02130",
-    "02494"
-]
-
-
-const containerStyle = {
-  width: '400px',
-  height: '400px'
-};
-
-
-
 const onLoad = marker => {
     console.log('marker: ', marker)
   }
 
 function Map(props) {
-  const center = props.center;
+
+
+  const containerStyle = {
+    width: props.width,
+    height: props.height,
+  };
+
+  const coords = props.coords;
+  const markers = coords.map((ele)=>(
+    <Marker
+    onLoad={onLoad}
+    position={ele}
+    />
+  )
+  )
+  const center = props.center ? props.center : coords[0];
+  console.log(center);
+  const zoom = props.zoom ? props.zoom : 12;
+
   return (
       <>
     <LoadScript
@@ -31,12 +33,9 @@ function Map(props) {
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={10}
+        zoom={zoom}
       >
-          <Marker
-          onLoad={onLoad}
-          position={center}
-          />
+          {markers}
         { /* Child components, such as markers, info windows, etc. */ }
         <></>
       </GoogleMap>
