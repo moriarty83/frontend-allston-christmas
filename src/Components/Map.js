@@ -2,7 +2,7 @@ import React from 'react'
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const onLoad = marker => {
-    console.log('marker: ', marker)
+    
   }
 
 function Map(props) {
@@ -14,15 +14,14 @@ function Map(props) {
   };
 
   const coords = props.coords;
-  const markers = coords.map((ele)=>(
-    <Marker
+  const markers = coords.map((ele, index)=>(
+    <Marker key={index}
     onLoad={onLoad}
     position={ele}
     />
   )
   )
   const center = props.center ? props.center : coords[0];
-  console.log(center);
   const zoom = props.zoom ? props.zoom : 12;
 
   return (
