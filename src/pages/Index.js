@@ -8,7 +8,7 @@ function Index(props) {
       lat: 39.83333,
       lng: -98.58333};
 
-    const defaultZoom = 4;
+    const defaultZoom = 3;
 
     // state to hold formData
     const [newForm, setNewForm] = useState({
@@ -82,12 +82,18 @@ function Index(props) {
     const loading = () => {
         return <h1> Loading... </h1>
     };
+
+    const mapWidth = () =>{
+      console.log(window.innerWidth)
+      return window.innerWidth < 500 ? window.innerWidth*.9 : window.innerWidth*.3
+      }
+    
     
     return (
         <section>
           <div className="index-div">
           <div className="map-div">
-              <Map coords={coords} width={window.innerWidth*.3} height={window.innerWidth*.3} center={defaultCenter} zoom={defaultZoom}/>
+              <Map coords={coords} width={mapWidth()} height={mapWidth()} center={defaultCenter} zoom={defaultZoom}/>
             </div>
             <div className="items-div">
             {props.items ? loaded() : loading()}
