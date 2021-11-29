@@ -14,6 +14,7 @@ https://allstonchristmas.netlify.app/
 - SCSS
 - Github
 - React
+- REST API
 - Auth0
 - GoogleMaps API
 - Google Geolocator API
@@ -34,6 +35,14 @@ https://allstonchristmas.netlify.app/
 
 ## Screenshots
 
+![Mockups](/public/readme_images/allston_christmas_mockup.png)
+
+![Show View](/public/readme_images/show.png)
+
+![Edit View](/public/readme_images/edit.png)
+
+![Profile View](/public/readme_images/profile.png)
+
 ## Wireframes
 
 Index View
@@ -41,6 +50,12 @@ Index View
 
 Show View
 ![Show Page Wireframe](/public/readme_images/show_wireframe.jpeg)
+
+## Contributors
+
+- Andy Zheng
+- C. Marshall Moriarty
+- Dmitri Jecov
 
 ## Reference
 
