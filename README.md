@@ -2,7 +2,7 @@
 
 Allston Christmas makes finding Curbside Gems easier. By providing a platform where people can post what nice an useful items they are leaving on the curb people can more easily find curbside gems and prevent those second hand beauties from winding up in a landfill.
 
-## App Link
+## App Link 
 
 https://allstonchristmas.netlify.app/
 
